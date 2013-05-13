@@ -12,14 +12,11 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-import model.animation.drawable.DrawableObj;
+import model.animation.drawable.Drawable;
 
 public class AnimationPanel extends JPanel
 {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -7381708487081172311L;
 	
 	public static int BACKGROUND = 0;
@@ -36,7 +33,7 @@ public class AnimationPanel extends JPanel
 	
 	Color backgroundColor; 
 	
-	ArrayList<DrawableObj> drawables = new ArrayList<DrawableObj>();
+	ArrayList<Drawable> drawables = new ArrayList<Drawable>();
 	
 	public AnimationPanel(int width, int height, int fps) {
 		
@@ -58,7 +55,7 @@ public class AnimationPanel extends JPanel
 				}
 				
 				for(int i=0; i<drawables.size(); i++){
-					drawables.get(i).drawSelf(bbg2d);
+					drawables.get(i).draw(bbg2d);
 				}
 				self.repaint();
 			}
@@ -82,10 +79,10 @@ public class AnimationPanel extends JPanel
 	}
 	
 	public void clearDrawables(){
-		drawables = new ArrayList<DrawableObj>();
+		drawables = new ArrayList<Drawable>();
 	}
 	
-	public void addToDrawableList(DrawableObj drawable){
+	public void addToDrawableList(Drawable drawable){
 		drawables.add(drawable);
 	}
 	

@@ -1,0 +1,30 @@
+
+
+Drawable
+	- instantiated with the business object
+	- draw
+	- handle mouse events / interactive events / or propagate them
+	
+Example of drawable - CompositeDrawable
+	- lists a set of drawable
+	- can switch which drawable actually drawn
+
+Refreshable
+	- contains base executor code
+	- has refresh, stop and start, this is a timer that changes the internal logic of the drawable
+
+AnimatedPanel
+	- manages layers
+		- add layer
+		- addToLayer( layerNumber, Drawable)
+		- set FPS, this is the fps for redrawing to the back buffer
+
+AnimationController
+		- can stop/start individual drawables
+		- can show/hide individual layers
+
+EventPropagator/NullEventPropagator - a controls listener
+		- propagateMouseEvents
+		
+		
+This helps me manage animations in java only.

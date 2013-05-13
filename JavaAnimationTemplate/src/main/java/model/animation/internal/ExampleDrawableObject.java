@@ -4,10 +4,10 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
 
-import model.animation.drawable.DrawableObj;
-import model.animation.drawable.RefreshingObj;
+import model.animation.drawable.Drawable;
+import model.animation.drawable.Refreshable;
 
-public class ExampleDrawableObject extends RefreshingObj implements DrawableObj 
+public class ExampleDrawableObject extends Refreshable implements Drawable 
 {
 	public final static int LEFT = -1 ;
 	public final static int RIGHT = 1 ;
@@ -28,7 +28,7 @@ public class ExampleDrawableObject extends RefreshingObj implements DrawableObj
 	}
 
 	@Override
-	public void drawSelf(Graphics2D g2d) {
+	public void draw(Graphics2D g2d) {
 		g2d.setColor(color);
 		g2d.setStroke(stroke);
 		g2d.drawLine(sliderX, 0, sliderX, height);

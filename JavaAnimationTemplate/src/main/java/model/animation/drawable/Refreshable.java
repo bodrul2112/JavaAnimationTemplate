@@ -5,10 +5,10 @@ import java.awt.event.ActionListener;
 
 import javax.swing.Timer;
 
-public abstract class RefreshingObj
+public abstract class Refreshable
 {
-	RefreshingObj self = this;
-	Timer refreshTimer;
+	Refreshable self = this;
+	Timer refreshTimer; //TODO: get rid of timer and use executor
 	
 	public void setRefreshRate(double seconds){
 		
